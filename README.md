@@ -2,6 +2,8 @@
 
 A browser-based interface for the *Gazetteer of Markets and Fairs in England and Wales to 1516*, the definitive catalogue of legally-established markets and fairs in medieval England and Wales.
 
+![img.png](img.png)
+
 **[Launch the Gazetteer →](https://ihr-digital.github.io/markets-and-fairs/)**
 
 ## About
