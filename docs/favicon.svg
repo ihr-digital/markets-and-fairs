@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Simple balance/scales icon representing market trade -->
+  <rect width="32" height="32" rx="6" fill="#c0392b"/>
+  <!-- Pillar -->
+  <rect x="14.5" y="7" width="3" height="16" rx="1" fill="#fff"/>
+  <!-- Base -->
+  <rect x="10" y="23" width="12" height="2.5" rx="1" fill="#fff"/>
+  <!-- Beam -->
+  <rect x="4" y="7" width="24" height="2.5" rx="1" fill="#fff"/>
+  <!-- Left pan -->
+  <path d="M4.5 9.5 L3 17 Q3 18.5 6 18.5 Q9 18.5 9 17 L7.5 9.5" fill="none" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"/>
+  <!-- Right pan -->
+  <path d="M24.5 9.5 L23 17 Q23 18.5 26 18.5 Q29 18.5 29 17 L27.5 9.5" fill="none" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"/>
+</svg>
+

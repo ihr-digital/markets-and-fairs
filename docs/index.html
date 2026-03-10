@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gazetteer of Markets and Fairs in England &amp; Wales</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Sidebar -->
+<aside id="sidebar">
+  <header id="sidebar-header">
+    <div id="sidebar-title-row">
+      <h1>Markets &amp; Fairs<br><small id="subtitle">England &amp; Wales</small></h1>
+      <button id="attribution-toggle" title="About &amp; attribution"><span class="info-i">i</span></button>
+    </div>
+    <div id="controls">
+      <input type="search" id="search" placeholder="Search places…" autocomplete="off">
+      <div id="filters">
+        <select id="filter-county"><option value="">All counties</option></select>
+        <select id="filter-cat">
+          <option value="">All types</option>
+          <option value="market">Markets only</option>
+          <option value="fair">Fairs only</option>
+          <option value="both">Market &amp; fair</option>
+          <option value="none">Neither</option>
+</select>
+      </div>
+      <div id="result-count"></div>
+    </div>
+  </header>
+  <ul id="place-list"></ul>
+</aside>
+
+<!-- Map -->
+<div id="map"></div>
+
+<!-- Attribution modal -->
+<div id="modal-backdrop" class="hidden"></div>
+<div id="attribution" class="hidden" role="dialog" aria-labelledby="attr-title">
+  <button id="attribution-close" aria-label="Close">&times;</button>
+  <h2 id="attr-title">About this Gazetteer</h2>
+  <div class="attr-columns">
+    <div class="attr-left">
+      <p>This is an augmented and adapted database of markets and fairs in medieval England and Wales,
+        based on the original <cite>Gazetteer of Markets and Fairs in England and Wales to 1516</cite>. Original documentation is linked from <a href="https://github.com/ihr-digital/markets-and-fairs/" target="_blank">here</a>.</p>
+      <p id="meta-summary"></p>
+      <h3>Original dataset</h3>
+      <p>Samantha Letters, with Mario Fernandes, Derek Keene and Olwen Myhill,
+        <cite>Gazetteer of Markets and Fairs in England and Wales to 1516</cite>
+        (Kew: List and Index Society, 2003; Special Series vols 32 and 33).
+        UK Data Archive, Study Number <a href="https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=4171" target="_blank" rel="noopener">SN 4171</a>.
+        &copy; Centre for Metropolitan History, Institute of Historical Research
+        (School of Advanced Study, University of London).</p>
+      <p>Online edition (with updates to 2006):
+        <a href="https://archives.history.ac.uk/gazetteer/gazweb2.html" target="_blank" rel="noopener">archives.history.ac.uk/gazetteer</a>.</p>
+      <h3>Augmentation &amp; adaptation</h3>
+      <p>Database construction, normalisation, coordinate correction, integration of the
+        2006 online updates, and this web application by Stephen Gadd, 2025&ndash;2026.</p>
+      <h3>Welsh place names</h3>
+      <p>Welsh-language toponyms augmented using data from the
+        <a href="https://historicplacenames.rcahmw.gov.uk/" target="_blank" rel="noopener">RCAHMW Historic Place Names of Wales</a>,
+        Royal Commission on the Ancient and Historical Monuments of Wales.</p>
+      <h3>Historic county boundaries</h3>
+      <p>County outlines from the <a href="https://county-borders.co.uk" target="_blank" rel="noopener">Historic County Borders Project</a>.</p>
+      <h3>Navigable waterways</h3>
+      <p>Inland waterway network from E.&thinsp;Oksanen &amp; J.&thinsp;Sherborne,
+        <a href="https://researchportal.helsinki.fi/en/datasets/inland-navigation-in-england-and-wales-before-1348-gis-database/" target="_blank" rel="noopener"><cite>Inland Navigation in England and Wales before 1348: GIS database</cite></a> (2019).</p>
+      <h3>Historical roads</h3>
+      <p>Road network digitised by Stephen Gadd from John Ogilby&rsquo;s
+        <a href="https://cudl.lib.cam.ac.uk/view/PR-ATLAS-00004-00067-00006/1" target="_blank" rel="noopener"><cite>Britannia</cite></a> (1675)
+        road strip maps and Philip Lea&rsquo;s
+        <a href="https://collections.britishart.yale.edu/catalog/alma:995839353408651" target="_blank" rel="noopener"><cite>The Travellers Guide</cite></a> (c.&thinsp;1686).</p>
+      <h3>Base map</h3>
+      <p>Map tiles &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors.
+        Rendered with <a href="https://maplibre.org/" target="_blank" rel="noopener">MapLibre GL JS</a>.</p>
+    </div>
+    <div class="attr-right">
+      <h3>Abbreviated sources</h3>
+      <p class="attr-src-intro">Frequently cited works in place entries. Hover over abbreviations in the detail panel for the full reference.</p>
+      <dl id="attr-sources-dl" class="attr-sources"></dl>
+    </div>
+  </div>
+</div>
+
+<!-- Detail panel -->
+<section id="detail" class="hidden">
+  <button id="detail-close" aria-label="Close">&times;</button>
+  <div id="detail-content"></div>
+</section>
+
+<script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+<script type="module" src="js/app.js"></script>
+</body>
+</html>
+
